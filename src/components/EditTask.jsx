@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
+import "../assets/Edit.css";
 
 const API = "http://localhost:5000/v1/todo/";
 
-const EditTask = ({ isOpen, task }) => {
+const EditTask = ({ isOpen, task, isClose }) => {
   const [taskname, setName] = useState(task.name);
   const [taskstatus, setStatus] = useState(task.status);
   const [taskid, setId] = useState(task.id);
@@ -27,7 +28,7 @@ const EditTask = ({ isOpen, task }) => {
       });
   };
 
-  const handleEdit = (event) => {
+  const handleSubmit = (event) => {
     fetch(`${API}/${taskid}`, {
       method: "PUT",
       headers: {
@@ -55,16 +56,14 @@ const EditTask = ({ isOpen, task }) => {
     <React.Fragment>
       <div className="editTask">
         <div className="editTask-container">
-          <form>
-            <label>
-              Editar nombre
-              <input
-                onChange={(event) => setName(event.target.value)}
-                placeholder="nombre"
-                name="name"
-                type="text"
-              />
-            </label>
+          <form className="edit-form" onSubmit={handleSubmit}>
+            <input
+              onChange={(event) => setName(event.target.value)}
+              placeholder="nombre"
+              name="name"
+              type="text"
+            />
+
             <label>
               <select onChange={(event) => setStatus(event.target.value)}>
                 <option value="ABIERTA">ABIERTA</option>
@@ -78,12 +77,14 @@ const EditTask = ({ isOpen, task }) => {
               {task.users.map((user) => (
                 <React.Fragment>
                   <p>{user.name}</p>
+                  <input value={user} type="checkbox" placeholder="eliminar" />
                 </React.Fragment>
               ))}
             </label>
 
-            <button onClick={handleEdit}>EDITAR</button>
+            <button>EDITAR</button>
           </form>
+          <button onClick={isClose}>CANCELAR</button>
         </div>
       </div>
     </React.Fragment>,
