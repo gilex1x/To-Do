@@ -1,0 +1,48 @@
+.taskList {
+  display: flex;
+  justify-content: space-around;
+}
+
+.taskList ul {
+  list-style: none;
+}
+
+.task-container {
+  height: max-content;
+  margin: 10px 0px;
+  display: grid;
+  justify-items: center;
+  border-bottom: 1px solid white;
+  padding-bottom: 10px;
+}
+
+.task-container button {
+  width: 50%;
+  height: 25px;
+}
+
+.taskOpen {
+  background-color: rgb(59, 160, 255);
+  height: max-content;
+  width: 23%;
+  justify-items: center;
+}
+
+.taskProgress {
+  background-color: rgb(208, 246, 80);
+  height: max-content;
+  width: 23%;
+  justify-items: center;
+}
+.taskComplete {
+  background-color: rgb(92, 255, 154);
+  height: max-content;
+  width: 23%;
+  justify-items: center;
+}
+.taskArchived {
+  background-color: rgb(255, 76, 76);
+  height: max-content;
+  width: 23%;
+  justify-items: center;
+}
