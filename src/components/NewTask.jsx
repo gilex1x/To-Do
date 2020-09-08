@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useReducer } from "react";
+import React, { useState } from "react";
+import "../assets/New.css";
 const API = "http://localhost:5000/v1/todo/";
 
 const NewTask = (props) => {
@@ -23,7 +24,7 @@ const NewTask = (props) => {
     }
   };
   const handleSubmit = (evento) => {
-    fetch("http://localhost:5000/v1/todo/", {
+    fetch(API, {
       method: "POST",
       headers: {
         Accept: "application/json",

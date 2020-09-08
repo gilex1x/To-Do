@@ -16,8 +16,16 @@ const Header = () => {
       <div className="navBar">
         <ul>
           <li>
-            <button onClick={handleOpen}>+</button>
+            <button onClick={handleOpen} className="add-bt">
+              +
+            </button>
             <NewTask isOpen={open} isClose={handleClose} />
+          </li>
+          <li>
+            <form>
+              <label>BUSCAR </label>
+              <input type="search" placeholder="Buscar Tarea" />
+            </form>
           </li>
         </ul>
       </div>
