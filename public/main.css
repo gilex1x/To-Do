@@ -51,3 +51,12 @@ body {
   width: 400px;
   height: max-content;
 }
+
+button {
+  background-color: whitesmoke;
+  border-radius: 5px;
+}
+
+button:hover {
+  cursor: pointer;
+}

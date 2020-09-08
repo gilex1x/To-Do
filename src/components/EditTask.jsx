@@ -1,17 +1,34 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
+
 const API = "http://localhost:5000/v1/todo/";
 
 const EditTask = ({ isOpen, task }) => {
   const [taskname, setName] = useState(task.name);
   const [taskstatus, setStatus] = useState(task.status);
   const [taskid, setId] = useState(task.id);
-  const [users, setUsers] = useState(task.users);
-  const handleDelete = () => {
-    console.log(taskid);
+  const handleDelete = (user) => {
+    fetch(`${API}/${task.id}`, {
+      method: "DELETE",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: user.name,
+      }),
+    })
+      .then((response) => {
+        const resultado = response.json();
+        console.log(resultado);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
+
   const handleEdit = (event) => {
-    fetch(`http://localhost:5000/v1/todo/${taskid}`, {
+    fetch(`${API}/${taskid}`, {
       method: "PUT",
       headers: {
         Accept: "application/json",
@@ -20,7 +37,6 @@ const EditTask = ({ isOpen, task }) => {
       body: JSON.stringify({
         name: taskname,
         status: taskstatus,
-        //users: task.users,
         id: taskid,
       }),
     })
@@ -51,7 +67,7 @@ const EditTask = ({ isOpen, task }) => {
             </label>
             <label>
               <select onChange={(event) => setStatus(event.target.value)}>
-                <option value="ARCHIVADA">ABIERTA</option>
+                <option value="ABIERTA">ABIERTA</option>
                 <option value="EN-PROGRESO">EN PROGRESO</option>
                 <option value="COMPLETADA">COMPLETADA</option>
                 <option value="ARCHIVADA">ARCHIVADA</option>
@@ -62,10 +78,6 @@ const EditTask = ({ isOpen, task }) => {
               {task.users.map((user) => (
                 <React.Fragment>
                   <p>{user.name}</p>
-                  <p>{user._id}</p>
-                  <button type="button" onClick={handleDelete}>
-                    ELIMINAR USUARIO
-                  </button>
                 </React.Fragment>
               ))}
             </label>
