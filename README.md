@@ -8,7 +8,10 @@
     -Para poder visualizarlo:
                 $npm start
     -El proyecto corre en el puerto 3000 en local.
-
+# La Aplicación💻   
+   Puedes crear tareas, las cuales contienen un titulo, el nombre de los usuarios que estan encargados de esta, y el status de a tarea.
+   Puedes editar una Traea para actualizar el nombre o el status.
+   Los estados de las tareas son ABIERTA, EN-PROGRESO,COMPLETADA o ARCHIVADA
 
 
 
