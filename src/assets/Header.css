@@ -20,5 +20,10 @@
   align-content: center;
 }
 .navBar button {
-  height: 30px;
+  width: max-content;
+  height: max-content;
+  border: none;
+  border-radius: 1000px;
+  font-size: 30px;
+  background-color: whitesmoke;
 }

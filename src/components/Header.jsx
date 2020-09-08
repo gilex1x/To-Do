@@ -16,7 +16,7 @@ const Header = () => {
       <div className="navBar">
         <ul>
           <li>
-            <button onClick={handleOpen}>Nueva Tarea</button>
+            <button onClick={handleOpen}>+</button>
             <NewTask isOpen={open} isClose={handleClose} />
           </li>
         </ul>

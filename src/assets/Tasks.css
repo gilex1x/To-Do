@@ -12,13 +12,16 @@
   margin: 10px 0px;
   display: grid;
   justify-items: center;
-  border-bottom: 1px solid white;
   padding-bottom: 10px;
+  background-color: rgba(255, 255, 255, 0.198);
 }
 
 .task-container button {
+  background-color: rgba(0, 0, 0, 0.616);
+  border: none;
   width: 50%;
   height: 25px;
+  color: whitesmoke;
 }
 
 .taskOpen {

@@ -26,7 +26,9 @@ const Task = ({ name, status, users, id, _id }) => {
             <li>{user.name}</li>
           ))}
         </ul>
-        <button onClick={handleOpen}>Editar</button>
+        <button onClick={handleOpen}>
+          <strong>EDITAR</strong>
+        </button>
         <EditTask isOpen={open} task={task} isClose={handleClose} />
       </div>
     </React.Fragment>
