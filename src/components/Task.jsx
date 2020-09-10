@@ -22,13 +22,14 @@ const Task = ({ name, status, users, id, _id }) => {
         <h2>{name}</h2>
         <p>{status}</p>
         <ul>
-          {users.map((user) => (
-            <li>{user.name}</li>
+          {users.map((user, j) => (
+            <li key={j}>{user.name}</li>
           ))}
         </ul>
         <button onClick={handleOpen}>
           <strong>EDITAR</strong>
         </button>
+
         <EditTask isOpen={open} task={task} isClose={handleClose} />
       </div>
     </React.Fragment>

@@ -23,8 +23,8 @@ const NewTask = (props) => {
       setUsers(usersList);
     }
   };
-  const handleSubmit = (evento) => {
-    fetch(API, {
+  const handleSubmit = async (evento) => {
+    await fetch(API, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -73,7 +73,7 @@ const NewTask = (props) => {
                 type="text"
               />
               <button type="button" onClick={handleClick}>
-                Añadir usuario
+                Añadir usuarios
               </button>
             </div>
 

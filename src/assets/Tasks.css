@@ -1,6 +1,7 @@
 .taskList {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
 }
 
 .taskList ul {
@@ -27,25 +28,21 @@
 .taskOpen {
   background-color: rgb(59, 160, 255);
   height: max-content;
-  width: 23%;
   justify-items: center;
 }
 
 .taskProgress {
   background-color: rgb(208, 246, 80);
   height: max-content;
-  width: 23%;
   justify-items: center;
 }
 .taskComplete {
   background-color: rgb(92, 255, 154);
   height: max-content;
-  width: 23%;
   justify-items: center;
 }
 .taskArchived {
   background-color: rgb(255, 76, 76);
   height: max-content;
-  width: 23%;
   justify-items: center;
 }

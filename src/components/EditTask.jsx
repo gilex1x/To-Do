@@ -8,28 +8,9 @@ const EditTask = ({ isOpen, task, isClose }) => {
   const [taskname, setName] = useState(task.name);
   const [taskstatus, setStatus] = useState(task.status);
   const [taskid, setId] = useState(task.id);
-  const handleDelete = (user) => {
-    fetch(`${API}/${task.id}`, {
-      method: "DELETE",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: user.name,
-      }),
-    })
-      .then((response) => {
-        const resultado = response.json();
-        console.log(resultado);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
 
-  const handleSubmit = (event) => {
-    fetch(`${API}/${taskid}`, {
+  const handleSubmit = async (event) => {
+    await fetch(`${API}/${taskid}`, {
       method: "PUT",
       headers: {
         Accept: "application/json",
@@ -77,7 +58,6 @@ const EditTask = ({ isOpen, task, isClose }) => {
               {task.users.map((user) => (
                 <React.Fragment>
                   <p>{user.name}</p>
-                  <input value={user} type="checkbox" placeholder="eliminar" />
                 </React.Fragment>
               ))}
             </label>
