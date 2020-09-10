@@ -9,6 +9,7 @@
                 $npm start
     -El proyecto corre en el puerto 3000 en local.
     -Para poder usarla, toca correr un API que permita opter y modificar la infromación de las tareas.
+    -El repositorio de la API lo encuentras en: https://github.com/gilex1x/to-do-api
    ## ❗❗Actualmente la aplicacion busca la informacion en el PUERTO 5000, verifica que la API corra en este mismo.❗❗
 # La Aplicación💻   
    Puedes crear tareas, las cuales contienen un titulo, el nombre de los usuarios que estan encargados de está, y el status de a tarea.
