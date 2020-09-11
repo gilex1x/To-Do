@@ -53,12 +53,14 @@ const NewTask = (props) => {
       <div className="new-task">
         <div className="new-container">
           <form onSubmit={handleSubmit}>
+            <label>NOMBRE DE LA TAREA</label>
             <input
               onChange={(event) => setName(event.target.value)}
               placeholder="Nombre de la Tarea"
               name="name"
               type="text"
             />
+            <label>ESTADO DE LA TAREA</label>
             <select onChange={(event) => setStatus(event.target.value)}>
               <option value="ABIERTA">ABIERTA</option>
               <option value="EN-PROGRESO">EN PROGRESO</option>
@@ -66,19 +68,29 @@ const NewTask = (props) => {
               <option value="ARCHIVADA">ARCHIVADA</option>
             </select>
             <div>
+              <label>
+                Ingrese el nombre de los usuarios separados por comas (,) y
+                despúes haga click en AÑADIR USUARIOS
+              </label>
               <input
                 onChange={handleChange}
                 placeholder="Usuarios"
                 name="userName"
                 type="text"
               />
-              <button type="button" onClick={handleClick}>
+              <button
+                className="add-user-bt"
+                type="button"
+                onClick={handleClick}
+              >
                 Añadir usuarios
               </button>
             </div>
 
-            <button>Crear</button>
-            <button onClick={props.isClose}>Cancelar</button>
+            <button className="create-bt">Crear</button>
+            <button className="cancel-bt" onClick={props.isClose}>
+              Cancelar
+            </button>
           </form>
         </div>
       </div>

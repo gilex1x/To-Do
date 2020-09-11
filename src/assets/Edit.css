@@ -33,7 +33,7 @@
   flex-direction: column;
 }
 .editTask-container button {
-  background-color: whitesmoke;
+  border: none;
   border-radius: 5px;
   margin: 10px 0px;
   height: 30px;
@@ -46,4 +46,11 @@
 }
 .editTask-container button:hover {
   cursor: pointer;
+}
+
+.cancel-bt {
+  background-color: salmon;
+}
+.edit-bt {
+  background-color: rgb(83, 119, 226);
 }

@@ -40,7 +40,7 @@ const EditTask = ({ isOpen, task, isClose }) => {
           <form className="edit-form" onSubmit={handleSubmit}>
             <input
               onChange={(event) => setName(event.target.value)}
-              placeholder="nombre"
+              placeholder={task.name}
               name="name"
               type="text"
             />
@@ -53,18 +53,12 @@ const EditTask = ({ isOpen, task, isClose }) => {
                 <option value="ARCHIVADA">ARCHIVADA</option>
               </select>
             </label>
-            <label>
-              usuarios
-              {task.users.map((user) => (
-                <React.Fragment>
-                  <p>{user.name}</p>
-                </React.Fragment>
-              ))}
-            </label>
 
-            <button>EDITAR</button>
+            <button className="edit-bt">EDITAR</button>
           </form>
-          <button onClick={isClose}>CANCELAR</button>
+          <button className="cancel-bt" onClick={isClose}>
+            CANCELAR
+          </button>
         </div>
       </div>
     </React.Fragment>,
