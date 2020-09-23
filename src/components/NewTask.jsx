@@ -15,7 +15,7 @@ const NewTask = (props) => {
     setNames(event.target.value.split(","));
   };
 
-  const handleClick = (event) => {
+  const handleClick = () => {
     for (let i = 0; i < names.length; i++) {
       const user = new User(names[i]);
       usersList.push(user);
@@ -69,8 +69,7 @@ const NewTask = (props) => {
             </select>
             <div>
               <label>
-                Ingrese el nombre de los usuarios separados por comas (,) y
-                despúes haga click en AÑADIR USUARIOS
+                Ingrese el nombre de los usuarios separados por comas (,)
               </label>
               <input
                 onChange={handleChange}
@@ -78,16 +77,11 @@ const NewTask = (props) => {
                 name="userName"
                 type="text"
               />
-              <button
-                className="add-user-bt"
-                type="button"
-                onClick={handleClick}
-              >
-                Añadir usuarios
-              </button>
             </div>
 
-            <button className="create-bt">Crear</button>
+            <button className="create-bt" onClick={handleClick}>
+              Crear
+            </button>
             <button className="cancel-bt" onClick={props.isClose}>
               Cancelar
             </button>

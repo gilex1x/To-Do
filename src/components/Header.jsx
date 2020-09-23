@@ -17,7 +17,7 @@ const Header = () => {
         <ul>
           <li>
             <button onClick={handleOpen} className="add-bt">
-              +
+              + AGREGAR TAREA
             </button>
             <NewTask isOpen={open} isClose={handleClose} />
           </li>

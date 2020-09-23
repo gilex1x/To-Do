@@ -27,7 +27,7 @@ const Task = ({ name, status, users, id, _id }) => {
           ))}
         </ul>
         <button onClick={handleOpen}>
-          <strong>EDITAR</strong>
+          <strong>ACTUALIZAR</strong>
         </button>
 
         <EditTask isOpen={open} task={task} isClose={handleClose} />
